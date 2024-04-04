@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./my_style.css">
+</head>
+<body>
+    <form id="form">
+        <div>
+            <input type="button" id="btn-check-Taxi_30s" value="Run Check Tài Xỉu 30s" class="btn-check"><br><br>
+        </div>
+        <div>
+            <input type="button" id="btn-check-XocDia_30s" value="Run Check Xóc Đĩa 30s" class="btn-check"><br><br>
+        </div>
+        <div>
+            <input type="button" id="btn-check-XocDia_45s" value="Run Check Xóc Đĩa 45s" class="btn-check"><br><br>
+        </div>
+        <div>
+            <input type="button" id="btn-check-Taxi_45s" value="Run Check Tài Xỉu 45s" class="btn-check"><br><br>
+        </div>
+        <div>
+            <input type="button" id="btn-check-Taxi_60s" value="Run Check Tài Xỉu 60s" class="btn-check"><br><br>
+        </div>
+        <div>
+            <input type="button" id="btn-check-XocDia_60s" value="Run Check Xóc Đĩa 60s" class="btn-check"><br><br>
+        </div>
+    </form>
+    <script type="text/javascript">
+
+        const btnCheckTaXi_30s= document.getElementById('btn-check-Taxi_30s');
+        btnCheckTaXi_30s.addEventListener('click',function() {
+            btnCheckTaXi_30s.value = "Running";
+            window.eventCheck.runCheckTaxi_30s().then((data) =>{
+            })
+        })
+
+        const btnCheckXocDia_30s= document.getElementById('btn-check-XocDia_30s');
+        btnCheckXocDia_30s.addEventListener('click',function() {
+            btnCheckXocDia_30s.value = "Running";
+            window.eventCheck.runCheckXocDia_30s().then((data) =>{
+            })
+        })
+
+        const btnCheckXocDia_45s= document.getElementById('btn-check-XocDia_45s');
+        btnCheckXocDia_45s.addEventListener('click',function() {
+            btnCheckXocDia_45s.value = "Running";
+            window.eventCheck.runCheckXocDia_45s().then((data) =>{
+            })
+        })
+
+        const btnCheckTaxi_45s= document.getElementById('btn-check-Taxi_45s');
+        btnCheckTaxi_45s.addEventListener('click',function() {
+            btnCheckTaxi_45s.value = "Running";
+            window.eventCheck.runCheckTaxi_45s().then((data) =>{
+            })
+        })
+
+        const btnCheckXocDia_60s= document.getElementById('btn-check-XocDia_60s');
+        btnCheckXocDia_60s.addEventListener('click',function() {
+            btnCheckXocDia_60s.value = "Running";
+            window.eventCheck.runCheckXocDia_60s().then((data) =>{
+            })
+        })
+
+        const btnCheckTaxi_60s= document.getElementById('btn-check-Taxi_60s');
+        btnCheckTaxi_60s.addEventListener('click',function() {
+            btnCheckTaxi_60s.value = "Running";
+            window.eventCheck.runCheckTaxi_60s().then((data) =>{
+            })
+        })
+    </script>
+</body>
+</html>

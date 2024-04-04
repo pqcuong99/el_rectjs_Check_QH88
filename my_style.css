@@ -1,0 +1,17 @@
+.btn-check {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 2px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    width: 180px;
+    height: 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+.btn-check {
+    background-color: #04aa6d;
+}
