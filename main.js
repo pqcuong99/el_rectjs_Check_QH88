@@ -12,8 +12,8 @@ let win;
 
 const createWindow = () => {
     win = new BrowserWindow({
-      width: 300,
-      height: 400,
+      width: 380,
+      height: 500,
       webPreferences: {
         devTools: false,
         contextIsolation: true,
@@ -48,16 +48,17 @@ async function sleep(ms) {
 
 
 
-
 let old_Turn_Taxi_30s = ""
 let chan_Taxi_30s = 0;
 let le_Taxi_30s = 0;
 let tai_Taxi_30s = 0;
 let xiu_Taxi_30s = 0;
-ipcMain.handle('runCheckTaxi_30s',async() =>{
+ipcMain.handle('runCheckTaxi_30s',async(event) =>{
     // telegram_Handler.guiTinNhanNhomTelegram("123");
     while (true) {
+        event.sender.send('onUpdate_ImageCheckTaxi_30s', "none");
         await sleep(8000).then(async() => {
+            event.sender.send('onUpdate_ImageCheckTaxi_30s', "hidden");
             let res = await ev_Trochoi.Result_VN_Taxi_30s();
             if(res != null){
                 let turnNum = res.turnNum;
@@ -66,7 +67,7 @@ ipcMain.handle('runCheckTaxi_30s',async() =>{
                     let n1  = parseInt(res.n1)
                     let n2  = parseInt(res.n2)
                     let n3  = parseInt(res.n3)
-
+                    
                     let sum = n1 + n2 + n3;
 
                     if(sum % 2 == 0){
@@ -97,10 +98,11 @@ ipcMain.handle('runCheckTaxi_30s',async() =>{
                     if(xiu_Taxi_30s > 14){
                         telegram_Handler.SendMessager_Chanel_TaXi("*** Trò chơi tài xỉu 30s:\n - Xỉu : "+xiu_Taxi_30s+"\n Hãy đánh : Tài")
                     }
+                    event.sender.send('onUpdate_runCheckTaxi_30s', {turn:turnNum.split("-")[1],tai:tai_Taxi_30s,xiu:xiu_Taxi_30s,chan:chan_Taxi_30s,le:le_Taxi_30s});
                 }
             }
         })
-
+        
         
     }
 })
@@ -109,9 +111,11 @@ ipcMain.handle('runCheckTaxi_30s',async() =>{
 let old_Turn_XocDia_30s = ""
 let chan_XocDia_30s = 0;
 let le_XocDia_30s = 0;
-ipcMain.handle('runCheckXocDia_30s',async() =>{
+ipcMain.handle('runCheckXocDia_30s',async(event) =>{
     while (true) {
+        event.sender.send('onUpdate_ImageCheckXocDia_30s', "none");
         await sleep(8000).then(async() => {
+            event.sender.send('onUpdate_ImageCheckXocDia_30s', "hidden");
             let res = await ev_Trochoi.Result_VN_XocDia_30s();
             if(res != null){
                 let turnNum = res.turnNum;
@@ -138,11 +142,11 @@ ipcMain.handle('runCheckXocDia_30s',async() =>{
                     if(le_XocDia_30s > 7){
                         telegram_Handler.SendMessager_Chanel_XocDia("*** Trò chơi Xóc Đĩa 30s:\n - Lẻ : "+le_XocDia_30s+"\n Hãy đánh : CHẴN")
                     }
-                    
+                    event.sender.send('onUpdate_runCheckXocDia_30s', {turn:turnNum.split("-")[1],chan:chan_XocDia_30s,le:le_XocDia_30s});
                 }
             }
         })
-        
+       
     }
 })
 
@@ -150,9 +154,11 @@ ipcMain.handle('runCheckXocDia_30s',async() =>{
 let old_Turn_XocDia_45s = ""
 let chan_XocDia_45s = 0;
 let le_XocDia_45s = 0;
-ipcMain.handle('runCheckXocDia_45s',async() =>{
+ipcMain.handle('runCheckXocDia_45s',async(event) =>{
     while (true) {
+        event.sender.send('onUpdate_ImageCheckXocDia_45s', "none");
         await sleep(8000).then(async() => {
+            event.sender.send('onUpdate_ImageCheckXocDia_45s', "hidden");
             let res = await ev_Trochoi.Result_VN_XocDia_45s();
             if(res != null){
                 let turnNum = res.turnNum;
@@ -179,6 +185,7 @@ ipcMain.handle('runCheckXocDia_45s',async() =>{
                     if(le_XocDia_45s > 7){
                         telegram_Handler.SendMessager_Chanel_XocDia("*** Trò chơi Xóc Đĩa 45s:\n - Lẻ : "+le_XocDia_45s+"\n Hãy đánh : CHẴN")
                     }
+                    event.sender.send('onUpdate_runCheckXocDia_45s', {turn:turnNum.split("-")[1],chan:chan_XocDia_45s,le:le_XocDia_45s});
                 }
             }
         })
@@ -192,9 +199,11 @@ let chan_Taxi_45s = 0;
 let le_Taxi_45s = 0;
 let tai_Taxi_45s = 0;
 let xiu_Taxi_45s = 0;
-ipcMain.handle('runCheckTaxi_45s',async() =>{
+ipcMain.handle('runCheckTaxi_45s',async(event) =>{
     while (true) {
+        event.sender.send('onUpdate_ImageCheckTaxi_45s', "none");
         await sleep(8000).then(async() => {
+            event.sender.send('onUpdate_ImageCheckTaxi_45s', "hidden");
             let res = await ev_Trochoi.Result_VN_Taxi_45s();
             if(res != null){
                 let turnNum = res.turnNum;
@@ -234,6 +243,8 @@ ipcMain.handle('runCheckTaxi_45s',async() =>{
                     if(xiu_Taxi_45s > 14){
                         telegram_Handler.SendMessager_Chanel_TaXi("*** Trò chơi tài xỉu 45s:\n - Xỉu : "+xiu_Taxi_45s+"\n Hãy đánh : Tài")
                     }
+
+                    event.sender.send('onUpdate_runCheckTaxi_45s', {turn:turnNum.split("-")[1],tai:tai_Taxi_45s,xiu:xiu_Taxi_45s,chan:chan_Taxi_45s,le:le_Taxi_45s});
                 }
             }
         })
@@ -246,9 +257,11 @@ ipcMain.handle('runCheckTaxi_45s',async() =>{
 let old_Turn_XocDia_60s = ""
 let chan_XocDia_60s = 0;
 let le_XocDia_60s = 0;
-ipcMain.handle('runCheckXocDia_60s',async() =>{
+ipcMain.handle('runCheckXocDia_60s',async(event) =>{
     while (true) {
+        event.sender.send('onUpdate_ImageCheckXocDia_60s', "none");
         await sleep(8000).then(async() => {
+            event.sender.send('onUpdate_ImageCheckXocDia_60s', "hidden");
             let res = await ev_Trochoi.Result_VN_XocDia_60s();
             if(res != null){
                 let turnNum = res.turnNum;
@@ -275,7 +288,7 @@ ipcMain.handle('runCheckXocDia_60s',async() =>{
                     if(le_XocDia_60s > 7){
                         telegram_Handler.SendMessager_Chanel_XocDia("*** Trò chơi Xóc Đĩa 60s:\n - Lẻ : "+le_XocDia_60s+"\n Hãy đánh : CHẴN")
                     }
-                    
+                    event.sender.send('onUpdate_runCheckXocDia_60s', {turn:turnNum.split("-")[1],chan:chan_XocDia_60s,le:le_XocDia_60s});
                 }
             }
         })
@@ -290,9 +303,11 @@ let chan_Taxi_60s = 0;
 let le_Taxi_60s = 0;
 let tai_Taxi_60s = 0;
 let xiu_Taxi_60s = 0;
-ipcMain.handle('runCheckTaxi_60s',async() =>{
+ipcMain.handle('runCheckTaxi_60s',async(event) =>{
     while (true) {
+        event.sender.send('onUpdate_ImageCheckTaxi_60s', "none");
         await sleep(8000).then(async() => {
+            event.sender.send('onUpdate_ImageCheckTaxi_60s', "hidden");
             let res = await ev_Trochoi.Result_VN_Taxi_60s();
             if(res != null){
                 let turnNum = res.turnNum;
@@ -332,6 +347,7 @@ ipcMain.handle('runCheckTaxi_60s',async() =>{
                     if(xiu_Taxi_60s > 14){
                         telegram_Handler.SendMessager_Chanel_TaXi("*** Trò chơi tài xỉu 60s:\n - Xỉu : "+xiu_Taxi_60s+"\n Hãy đánh : Tài")
                     }
+                    event.sender.send('onUpdate_runCheckTaxi_60s', {turn:turnNum.split("-")[1],tai:tai_Taxi_60s,xiu:xiu_Taxi_60s,chan:chan_Taxi_60s,le:le_Taxi_60s});
                 }
             }
         })

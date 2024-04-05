@@ -2,16 +2,87 @@
     background-color: #4CAF50; /* Green */
     border: none;
     color: white;
-    padding: 2px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 14px;
-    width: 180px;
-    height: 20px;
-    margin-top: 10px;
+    font-size: 15px;
+    width: 260px;
+    height: 25px;
     border-radius: 5px;
 }
 .btn-check {
     background-color: #04aa6d;
+}
+
+
+#container {
+    margin-top: 10px;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+.lb-result {
+    font-size: 13px;
+}
+
+.img-loading {
+    width: 18px;
+    height: 18px;
+    margin-left: 10px;
+    align-items: center;
+    visibility: hidden;
+}
+
+[id^="lb-xd-"][id$="-turn"] {
+    color: rgb(8, 31, 243);
+    font-size: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+[id^="lb-xd-"][id$="-le"] {
+    color: rgb(39, 168, 46);
+    font-size: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+[id^="lb-xd-"][id$="-chan"] {
+    color: red;
+    font-size: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+
+[id^="lb-tx-"][id$="-turn"] {
+    color: rgb(8, 31, 243);
+    font-size: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+[id^="lb-tx-"][id$="-le"] {
+    color: rgb(39, 168, 46);
+    font-size: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+[id^="lb-tx-"][id$="-chan"] {
+    color: red;
+    font-size: 15px;
+    margin-right: 5px;
+}
+
+[id^="lb-tx-"][id$="-tai"] {
+    color: rgb(240, 91, 240);
+    font-size: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+[id^="lb-tx-"][id$="-xiu"] {
+    color: rgb(57, 170, 204);
+    font-size: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
