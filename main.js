@@ -1,8 +1,10 @@
 const { app, ipcMain, BrowserWindow } = require("electron");
 const qh88_Trochoi = require("./src/controller/QH_88_Trochoi");
+const qh88_SieuToc = require("./src/controller/QH88_SieuToc");
 const telegram_handler = require("./src/controller/Send_message_telegram");
 
 let ev_Trochoi = new qh88_Trochoi.QH88_Event;
+let ev_SieuToc = new qh88_SieuToc.QH88_Event_SieuToc;
 let telegram_Handler = new telegram_handler.Telegram_Handler;
 
 const path = require("path");
@@ -12,7 +14,7 @@ let win;
 
 const createWindow = () => {
     win = new BrowserWindow({
-      width: 380,
+      width: 430,
       height: 500,
       webPreferences: {
         devTools: false,
@@ -370,7 +372,7 @@ ipcMain.handle('runCheck_VN_SieuToc_45s',async(event) =>{
         event.sender.send('onUpdate_ImageCheck_VN_SieuToc_45s', "none");
         await sleep(8000).then(async() => {
             event.sender.send('onUpdate_ImageCheck_VN_SieuToc_45s', "hidden");
-            let res = await ev_Trochoi.Result_VN_SieuToc_45s();
+            let res = await ev_SieuToc.Result_VN_SieuToc_45s();
             if(res != null){
                 let turnNum = res.turnNum;
                 if(old_Turn_VN_SieuToc_45s != turnNum){
@@ -425,7 +427,7 @@ ipcMain.handle('runCheck_VN_SieuToc_45s',async(event) =>{
                     }
                     
                     event.sender.send('onUpdate_runCheck_VN_SieuToc_45s', {turn:turnNum.split("-")[1],
-                        chan:chan_VN_SieuToc_45s,le:le_VN_SieuToc_45s,tai:tai_VN_SieuToc_45s,xiu:xiu_VN_SieuToc_45s,sum_chan:sum_chan_VN_SieuToc_45s,sum_le:sum_le_VN_SieuToc_45s});
+                        chan:chan_VN_SieuToc_45s,le:le_VN_SieuToc_45s,tai:tai_VN_SieuToc_45s,xiu:xiu_VN_SieuToc_45s,sumchan:sum_chan_VN_SieuToc_45s,sumle:sum_le_VN_SieuToc_45s});
                 }
             }
         })
@@ -447,7 +449,7 @@ ipcMain.handle('runCheck_VN_SieuToc_60s',async(event) =>{
         event.sender.send('onUpdate_ImageCheck_VN_SieuToc_60s', "none");
         await sleep(8000).then(async() => {
             event.sender.send('onUpdate_ImageCheck_VN_SieuToc_60s', "hidden");
-            let res = await ev_Trochoi.Result_VN_SieuToc_60s();
+            let res = await ev_SieuToc.Result_VN_SieuToc_60s();
             if(res != null){
                 let turnNum = res.turnNum;
                 if(old_Turn_VN_SieuToc_60s != turnNum){
@@ -502,7 +504,7 @@ ipcMain.handle('runCheck_VN_SieuToc_60s',async(event) =>{
                     }
                     
                     event.sender.send('onUpdate_runCheck_VN_SieuToc_60s', {turn:turnNum.split("-")[1],
-                        chan:chan_VN_SieuToc_60s,le:le_VN_SieuToc_60s,tai:tai_VN_SieuToc_60s,xiu:xiu_VN_SieuToc_60s,sum_chan:sum_chan_VN_SieuToc_60s,sum_le:sum_le_VN_SieuToc_60s});
+                        chan:chan_VN_SieuToc_60s,le:le_VN_SieuToc_60s,tai:tai_VN_SieuToc_60s,xiu:xiu_VN_SieuToc_60s,sumchan:sum_chan_VN_SieuToc_60s,sumle:sum_le_VN_SieuToc_60s});
                 }
             }
         })
@@ -524,7 +526,7 @@ ipcMain.handle('runCheck_VN_SieuToc_90s',async(event) =>{
         event.sender.send('onUpdate_ImageCheck_VN_SieuToc_90s', "none");
         await sleep(8000).then(async() => {
             event.sender.send('onUpdate_ImageCheck_VN_SieuToc_90s', "hidden");
-            let res = await ev_Trochoi.Result_VN_SieuToc_90s();
+            let res = await ev_SieuToc.Result_VN_SieuToc_90s();
             if(res != null){
                 let turnNum = res.turnNum;
                 if(old_Turn_VN_SieuToc_90s != turnNum){
@@ -579,7 +581,7 @@ ipcMain.handle('runCheck_VN_SieuToc_90s',async(event) =>{
                     }
                     
                     event.sender.send('onUpdate_runCheck_VN_SieuToc_90s', {turn:turnNum.split("-")[1],
-                        chan:chan_VN_SieuToc_90s,le:le_VN_SieuToc_90s,tai:tai_VN_SieuToc_90s,xiu:xiu_VN_SieuToc_90s,sum_chan:sum_chan_VN_SieuToc_90s,sum_le:sum_le_VN_SieuToc_90s});
+                        chan:chan_VN_SieuToc_90s,le:le_VN_SieuToc_90s,tai:tai_VN_SieuToc_90s,xiu:xiu_VN_SieuToc_90s,sumchan:sum_chan_VN_SieuToc_90s,sumle:sum_le_VN_SieuToc_90s});
                 }
             }
         })
@@ -602,7 +604,7 @@ ipcMain.handle('runCheck_SieuToc_45s',async(event) =>{
         event.sender.send('onUpdate_ImageCheck_SieuToc_45s', "none");
         await sleep(8000).then(async() => {
             event.sender.send('onUpdate_ImageCheck_SieuToc_45s', "hidden");
-            let res = await ev_Trochoi.Result_SieuToc_45s();
+            let res = await ev_SieuToc.Result_SieuToc_45s();
             if(res != null){
                 let turnNum = res.turnNum;
                 if(old_Turn_SieuToc_45s != turnNum){
@@ -657,7 +659,7 @@ ipcMain.handle('runCheck_SieuToc_45s',async(event) =>{
                     }
                     
                     event.sender.send('onUpdate_runCheck_SieuToc_45s', {turn:turnNum.split("-")[1],
-                        chan:chan_SieuToc_45s,le:le_SieuToc_45s,tai:tai_SieuToc_45s,xiu:xiu_SieuToc_45s,sum_chan:sum_chan_SieuToc_45s,sum_le:sum_le_SieuToc_45s});
+                        chan:chan_SieuToc_45s,le:le_SieuToc_45s,tai:tai_SieuToc_45s,xiu:xiu_SieuToc_45s,sumchan:sum_chan_SieuToc_45s,sumle:sum_le_SieuToc_45s});
                 }
             }
         })
@@ -679,7 +681,7 @@ ipcMain.handle('runCheck_SieuToc_60s',async(event) =>{
         event.sender.send('onUpdate_ImageCheck_SieuToc_60s', "none");
         await sleep(8000).then(async() => {
             event.sender.send('onUpdate_ImageCheck_SieuToc_60s', "hidden");
-            let res = await ev_Trochoi.Result_SieuToc_60s();
+            let res = await ev_SieuToc.Result_SieuToc_60s();
             if(res != null){
                 let turnNum = res.turnNum;
                 if(old_Turn_SieuToc_60s != turnNum){
@@ -734,7 +736,7 @@ ipcMain.handle('runCheck_SieuToc_60s',async(event) =>{
                     }
                     
                     event.sender.send('onUpdate_runCheck_SieuToc_60s', {turn:turnNum.split("-")[1],
-                        chan:chan_SieuToc_60s,le:le_SieuToc_60s,tai:tai_SieuToc_60s,xiu:xiu_SieuToc_60s,sum_chan:sum_chan_SieuToc_60s,sum_le:sum_le_SieuToc_60s});
+                        chan:chan_SieuToc_60s,le:le_SieuToc_60s,tai:tai_SieuToc_60s,xiu:xiu_SieuToc_60s,sumchan:sum_chan_SieuToc_60s,sumle:sum_le_SieuToc_60s});
                 }
             }
         })
@@ -756,14 +758,14 @@ ipcMain.handle('runCheck_SieuToc_90s',async(event) =>{
         event.sender.send('onUpdate_ImageCheck_SieuToc_90s', "none");
         await sleep(8000).then(async() => {
             event.sender.send('onUpdate_ImageCheck_SieuToc_90s', "hidden");
-            let res = await ev_Trochoi.Result_SieuToc_90s();
+            let res = await ev_SieuToc.Result_SieuToc_90s();
             if(res != null){
                 let turnNum = res.turnNum;
                 if(old_Turn_SieuToc_90s != turnNum){
                     old_Turn_SieuToc_90s = turnNum;
                     let n5  = parseInt(res.n5)
                     let n6  = parseInt(res.n6)
-
+                    
                     let sum =  n5 + n6;
 
                     if(n6 % 2 == 0){
@@ -811,7 +813,7 @@ ipcMain.handle('runCheck_SieuToc_90s',async(event) =>{
                     }
                     
                     event.sender.send('onUpdate_runCheck_SieuToc_90s', {turn:turnNum.split("-")[1],
-                        chan:chan_SieuToc_90s,le:le_SieuToc_90s,tai:tai_SieuToc_90s,xiu:xiu_SieuToc_90s,sum_chan:sum_chan_SieuToc_90s,sum_le:sum_le_SieuToc_90s});
+                        chan:chan_SieuToc_90s,le:le_SieuToc_90s,tai:tai_SieuToc_90s,xiu:xiu_SieuToc_90s,sumchan:sum_chan_SieuToc_90s,sumle:sum_le_SieuToc_90s});
                 }
             }
         })
