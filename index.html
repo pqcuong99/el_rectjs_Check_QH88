@@ -110,51 +110,121 @@
             <label id="lb-xd-60s-le"></label>
         </div>
 
+
+        <!-- Siêu Tốc 45s -->
+        <div id="container">
+            <input type="button" id="btn-check-SieuToc_45s" value="Run Check Siêu Tốc 45s" class="btn-check"><br><br>
+            <img src="https://i.gifer.com/ZKZg.gif" alt="loading" class="img-loading" id="img-load-st-45s">
+        </div>
+        <!-- Siêu Tốc 60s -->
+        <div id="container">
+            <input type="button" id="btn-check-SieuToc_60s" value="Run Check Siêu Tốc 60s" class="btn-check"><br><br>
+            <img src="https://i.gifer.com/ZKZg.gif" alt="loading" class="img-loading" id="img-load-st-60s">
+        </div>
+        <!-- Siêu Tốc 90s -->
+        <div id="container">
+            <input type="button" id="btn-check-SieuToc_90s" value="Run Check Siêu Tốc 90s" class="btn-check"><br><br>
+            <img src="https://i.gifer.com/ZKZg.gif" alt="loading" class="img-loading" id="img-load-st-90s">
+        </div>
+        <!-- VN Siêu Tốc 45s -->
+        <div id="container">
+            <input type="button" id="btn-check-vn-SieuToc_45s" value="Run Check VN Siêu Tốc 45s" class="btn-check"><br><br>
+            <img src="https://i.gifer.com/ZKZg.gif" alt="loading" class="img-loading" id="img-load-vnst-45s">
+        </div>
+        <!-- VN Siêu Tốc 60s -->
+        <div id="container">
+            <input type="button" id="btn-check-vn-SieuToc_60s" value="Run Check VN Siêu Tốc 45s" class="btn-check"><br><br>
+            <img src="https://i.gifer.com/ZKZg.gif" alt="loading" class="img-loading" id="img-load-vnst-60s">
+        </div>
+        <!-- VN Siêu Tốc 90s -->
+        <div id="container">
+            <input type="button" id="btn-check-vn-SieuToc_90s" value="Run Check VN Siêu Tốc 45s" class="btn-check"><br><br>
+            <img src="https://i.gifer.com/ZKZg.gif" alt="loading" class="img-loading" id="img-load-vnst-90s">
+        </div>
     </form>
     <script type="text/javascript">
         
         const btnCheckTaXi_30s= document.getElementById('btn-check-Taxi_30s');
         btnCheckTaXi_30s.addEventListener('click',function() {
-            btnCheckTaXi_30s.value = "Running";
+            btnCheckTaXi_30s.value = "Running check tài xỉu 30s";
             window.eventCheck.runCheckTaxi_30s().then((data) =>{
             })
         })
 
         const btnCheckXocDia_30s= document.getElementById('btn-check-XocDia_30s');
         btnCheckXocDia_30s.addEventListener('click',function() {
-            btnCheckXocDia_30s.value = "Running";
+            btnCheckXocDia_30s.value = "Running  check xóc đĩa 30s";
             window.eventCheck.runCheckXocDia_30s().then((data) =>{
             })
         })
 
         const btnCheckXocDia_45s= document.getElementById('btn-check-XocDia_45s');
         btnCheckXocDia_45s.addEventListener('click',function() {
-            btnCheckXocDia_45s.value = "Running";
+            btnCheckXocDia_45s.value = "Running  check tài xỉu 45s";
             window.eventCheck.runCheckXocDia_45s().then((data) =>{
             })
         })
 
         const btnCheckTaxi_45s= document.getElementById('btn-check-Taxi_45s');
         btnCheckTaxi_45s.addEventListener('click',function() {
-            btnCheckTaxi_45s.value = "Running";
+            btnCheckTaxi_45s.value = "Running  check tài xỉu 45s";
             window.eventCheck.runCheckTaxi_45s().then((data) =>{
             })
         })
 
         const btnCheckXocDia_60s= document.getElementById('btn-check-XocDia_60s');
         btnCheckXocDia_60s.addEventListener('click',function() {
-            btnCheckXocDia_60s.value = "Running";
+            btnCheckXocDia_60s.value = "Running  check xóc đĩa 60s";
             window.eventCheck.runCheckXocDia_60s().then((data) =>{
             })
         })
 
         const btnCheckTaxi_60s= document.getElementById('btn-check-Taxi_60s');
         btnCheckTaxi_60s.addEventListener('click',function() {
-            btnCheckTaxi_60s.value = "Running";
+            btnCheckTaxi_60s.value = "Running  check tài xỉu 60s";
             window.eventCheck.runCheckTaxi_60s().then((data) =>{
             })
         })
 
+
+        // Siêu Tốc 
+        const btnCheck_SieuToc_45s= document.getElementById('btn-check-SieuToc_45s');
+        btnCheck_SieuToc_45s.addEventListener('click',function() {
+            btnCheck_SieuToc_45s.value = "Running check siêu tốc 45s";
+            window.eventCheck.runCheck_SieuToc_45s().then((data) =>{
+            })
+        })
+        const btnCheck_SieuToc_60s= document.getElementById('btn-check-SieuToc_60s');
+        btnCheck_SieuToc_60s.addEventListener('click',function() {
+            btnCheck_SieuToc_60s.value = "Running check siêu tốc 60s";
+            window.eventCheck.runCheck_SieuToc_60s().then((data) =>{
+            })
+        })
+        const btnCheck_SieuToc_90s= document.getElementById('btn-check-SieuToc_90s');
+        btnCheck_SieuToc_90s.addEventListener('click',function() {
+            btnCheck_SieuToc_90s.value = "Running check siêu tốc 90s";
+            window.eventCheck.runCheck_SieuToc_90s().then((data) =>{
+            })
+        })
+
+        const btnCheck_VN_SieuToc_45s= document.getElementById('btn-check-vn-SieuToc_45s');
+        btnCheck_VN_SieuToc_45s.addEventListener('click',function() {
+            btnCheck_VN_SieuToc_45s.value = "Running check VN siêu tốc 45s";
+            window.eventCheck.runCheck_VN_SieuToc_45s().then((data) =>{
+            })
+        })
+        const btnCheck_VN_SieuToc_60s= document.getElementById('btn-check-vn-SieuToc_60s');
+        btnCheck_VN_SieuToc_60s.addEventListener('click',function() {
+            btnCheck_VN_SieuToc_60s.value = "Running check VN siêu tốc 60s";
+            window.eventCheck.runCheck_VN_SieuToc_45s().then((data) =>{
+            })
+        })
+        const btnCheck_VN_SieuToc_90s= document.getElementById('btn-check-vn-SieuToc_90s');
+        btnCheck_VN_SieuToc_90s.addEventListener('click',function() {
+            btnCheck_VN_SieuToc_90s.value = "Running check VN siêu tốc 90s";
+            window.eventCheck.runCheck_VN_SieuToc_45s().then((data) =>{
+            })
+        })
 
 
         // show thong tin result
@@ -219,6 +289,27 @@
         });
         window.eventCheck.onUpdate_ImageCheckXocDia_60s((data) => {
             document.getElementById('img-load-xd-60s').style.visibility  = data == "none" ? "visible" : "hidden";
+        });
+
+
+        // show/hide image load
+        window.eventCheck.onUpdate_ImageCheck_VN_SieuToc_45s((data) => {
+            document.getElementById('img-load-vnst-45s').style.visibility  = data == "none" ? "visible" : "hidden";
+        });
+        window.eventCheck.onUpdate_ImageCheck_VN_SieuToc_60s((data) => {
+            document.getElementById('img-load-vnst-60s').style.visibility  = data == "none" ? "visible" : "hidden";
+        });
+        window.eventCheck.onUpdate_ImageCheck_VN_SieuToc_90s((data) => {
+            document.getElementById('img-load-vnst-90s').style.visibility  = data == "none" ? "visible" : "hidden";
+        });
+        window.eventCheck.onUpdate_ImageCheck_SieuToc_45s((data) => {
+            document.getElementById('img-load-st-45s').style.visibility  = data == "none" ? "visible" : "hidden";
+        });
+        window.eventCheck.onUpdate_ImageCheck_SieuToc_60s((data) => {
+            document.getElementById('img-load-st-60s').style.visibility  = data == "none" ? "visible" : "hidden";
+        });
+        window.eventCheck.onUpdate_ImageCheck_SieuToc_90s((data) => {
+            document.getElementById('img-load-st-90s').style.visibility  = data == "none" ? "visible" : "hidden";
         });
 
     </script>

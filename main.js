@@ -354,3 +354,467 @@ ipcMain.handle('runCheckTaxi_60s',async(event) =>{
         
     }
 })
+
+
+
+
+let old_Turn_VN_SieuToc_45s = ""
+let chan_VN_SieuToc_45s = 0;
+let le_VN_SieuToc_45s = 0;
+let tai_VN_SieuToc_45s = 0;
+let xiu_VN_SieuToc_45s = 0;
+let sum_chan_VN_SieuToc_45s = 0;
+let sum_le_VN_SieuToc_45s = 0;
+ipcMain.handle('runCheck_VN_SieuToc_45s',async(event) =>{
+    while (true) {
+        event.sender.send('onUpdate_ImageCheck_VN_SieuToc_45s', "none");
+        await sleep(8000).then(async() => {
+            event.sender.send('onUpdate_ImageCheck_VN_SieuToc_45s', "hidden");
+            let res = await ev_Trochoi.Result_VN_SieuToc_45s();
+            if(res != null){
+                let turnNum = res.turnNum;
+                if(old_Turn_VN_SieuToc_45s != turnNum){
+                    old_Turn_VN_SieuToc_45s = turnNum;
+                    let n5  = parseInt(res.n5)
+                    let n6  = parseInt(res.n6)
+
+                    let sum =  n5 + n6;
+
+                    if(n6 % 2 == 0){
+                        chan_VN_SieuToc_45s += 1;
+                        le_VN_SieuToc_45s = 0;
+                    }else{
+                        chan_VN_SieuToc_45s = 0;
+                        le_VN_SieuToc_45s += 1;
+                    }
+                    
+                    if(n5 > 4 ){
+                        tai_VN_SieuToc_45s += 1;
+                        xiu_VN_SieuToc_45s = 0;
+                    }else{
+                        tai_VN_SieuToc_45s = 0;
+                        xiu_VN_SieuToc_45s += 1;
+                    }
+
+                    if(sum % 2 == 0){
+                        sum_chan_VN_SieuToc_45s += 1;
+                        sum_le_VN_SieuToc_45s = 0;
+                    }else{
+                        sum_chan_VN_SieuToc_45s = 0;
+                        sum_le_VN_SieuToc_45s += 1;
+                    }
+                    
+
+                    if(chan_VN_SieuToc_45s > 14){
+                        telegram_Handler.SendMessager_Chanel_TaXi("*** VN Siêu Tốc 45s:\n- Chẵn : "+chan_VN_SieuToc_45s+"\n Hãy đánh : LẺ")
+                    }
+                    if(le_VN_SieuToc_45s > 14){
+                        telegram_Handler.SendMessager_Chanel_TaXi("*** VN Siêu Tốc 45s:\n- LẺ : "+le_VN_SieuToc_45s+"\n Hãy đánh : CHẴN")
+                    }
+                    if(tai_VN_SieuToc_45s > 14){
+                        telegram_Handler.SendMessager_Chanel_TaXi("*** VN Siêu Tốc 45s:\n- Tài : "+tai_VN_SieuToc_45s+"\n Hãy đánh : XỈU")
+                    }
+                    if(xiu_VN_SieuToc_45s > 14){
+                        telegram_Handler.SendMessager_Chanel_TaXi("*** VN Siêu Tốc 45s:\n- XỈU : "+xiu_VN_SieuToc_45s+"\n Hãy đánh : TÀI")
+                    }
+                    if(sum_chan_VN_SieuToc_45s > 14){
+                        telegram_Handler.SendMessager_Chanel_TaXi("*** VN Siêu Tốc 45s:\n- Tổng Chẵn : "+sum_chan_VN_SieuToc_45s+"\n Hãy đánh : Tổng Lẻ")
+                    }
+                    if(sum_le_VN_SieuToc_45s > 14){
+                        telegram_Handler.SendMessager_Chanel_TaXi("*** VN Siêu Tốc 45s:\n- Tổng LẺ : "+sum_le_VN_SieuToc_45s+"\n Hãy đánh : Tổng Chẵn")
+                    }
+                    
+                    event.sender.send('onUpdate_runCheck_VN_SieuToc_45s', {turn:turnNum.split("-")[1],
+                        chan:chan_VN_SieuToc_45s,le:le_VN_SieuToc_45s,tai:tai_VN_SieuToc_45s,xiu:xiu_VN_SieuToc_45s,sum_chan:sum_chan_VN_SieuToc_45s,sum_le:sum_le_VN_SieuToc_45s});
+                }
+            }
+        })
+        
+    }
+})
+
+
+
+let old_Turn_VN_SieuToc_60s = ""
+let chan_VN_SieuToc_60s = 0;
+let le_VN_SieuToc_60s = 0;
+let tai_VN_SieuToc_60s = 0;
+let xiu_VN_SieuToc_60s = 0;
+let sum_chan_VN_SieuToc_60s = 0;
+let sum_le_VN_SieuToc_60s = 0;
+ipcMain.handle('runCheck_VN_SieuToc_60s',async(event) =>{
+    while (true) {
+        event.sender.send('onUpdate_ImageCheck_VN_SieuToc_60s', "none");
+        await sleep(8000).then(async() => {
+            event.sender.send('onUpdate_ImageCheck_VN_SieuToc_60s', "hidden");
+            let res = await ev_Trochoi.Result_VN_SieuToc_60s();
+            if(res != null){
+                let turnNum = res.turnNum;
+                if(old_Turn_VN_SieuToc_60s != turnNum){
+                    old_Turn_VN_SieuToc_60s = turnNum;
+                    let n5  = parseInt(res.n5)
+                    let n6  = parseInt(res.n6)
+
+                    let sum =  n5 + n6;
+
+                    if(n6 % 2 == 0){
+                        chan_VN_SieuToc_60s += 1;
+                        le_VN_SieuToc_60s = 0;
+                    }else{
+                        chan_VN_SieuToc_60s = 0;
+                        le_VN_SieuToc_60s += 1;
+                    }
+                    
+                    if(n5 > 4 ){
+                        tai_VN_SieuToc_60s += 1;
+                        xiu_VN_SieuToc_60s = 0;
+                    }else{
+                        tai_VN_SieuToc_60s = 0;
+                        xiu_VN_SieuToc_60s += 1;
+                    }
+
+                    if(sum % 2 == 0){
+                        sum_chan_VN_SieuToc_60s += 1;
+                        sum_le_VN_SieuToc_60s = 0;
+                    }else{
+                        sum_chan_VN_SieuToc_60s = 0;
+                        sum_le_VN_SieuToc_60s += 1;
+                    }
+                    
+
+                    if(chan_VN_SieuToc_60s > 14){
+                        telegram_Handler.SendMessager_Chanel_TaXi("*** VN Siêu Tốc 60s:\n- Chẵn : "+chan_VN_SieuToc_60s+"\n Hãy đánh : LẺ")
+                    }
+                    if(le_VN_SieuToc_60s > 14){
+                        telegram_Handler.SendMessager_Chanel_TaXi("*** VN Siêu Tốc 60s:\n- LẺ : "+le_VN_SieuToc_60s+"\n Hãy đánh : CHẴN")
+                    }
+                    if(tai_VN_SieuToc_60s > 14){
+                        telegram_Handler.SendMessager_Chanel_TaXi("*** VN Siêu Tốc 60s:\n- Tài : "+tai_VN_SieuToc_60s+"\n Hãy đánh : XỈU")
+                    }
+                    if(xiu_VN_SieuToc_60s > 14){
+                        telegram_Handler.SendMessager_Chanel_TaXi("*** VN Siêu Tốc 60s:\n- XỈU : "+xiu_VN_SieuToc_60s+"\n Hãy đánh : TÀI")
+                    }
+                    if(sum_chan_VN_SieuToc_60s > 14){
+                        telegram_Handler.SendMessager_Chanel_TaXi("*** VN Siêu Tốc 60s:\n- Tổng Chẵn : "+sum_chan_VN_SieuToc_60s+"\n Hãy đánh : Tổng Lẻ")
+                    }
+                    if(sum_le_VN_SieuToc_60s > 14){
+                        telegram_Handler.SendMessager_Chanel_TaXi("*** VN Siêu Tốc 60s:\n- Tổng LẺ : "+sum_le_VN_SieuToc_60s+"\n Hãy đánh : Tổng Chẵn")
+                    }
+                    
+                    event.sender.send('onUpdate_runCheck_VN_SieuToc_60s', {turn:turnNum.split("-")[1],
+                        chan:chan_VN_SieuToc_60s,le:le_VN_SieuToc_60s,tai:tai_VN_SieuToc_60s,xiu:xiu_VN_SieuToc_60s,sum_chan:sum_chan_VN_SieuToc_60s,sum_le:sum_le_VN_SieuToc_60s});
+                }
+            }
+        })
+        
+    }
+})
+
+
+
+let old_Turn_VN_SieuToc_90s = ""
+let chan_VN_SieuToc_90s = 0;
+let le_VN_SieuToc_90s = 0;
+let tai_VN_SieuToc_90s = 0;
+let xiu_VN_SieuToc_90s = 0;
+let sum_chan_VN_SieuToc_90s = 0;
+let sum_le_VN_SieuToc_90s = 0;
+ipcMain.handle('runCheck_VN_SieuToc_90s',async(event) =>{
+    while (true) {
+        event.sender.send('onUpdate_ImageCheck_VN_SieuToc_90s', "none");
+        await sleep(8000).then(async() => {
+            event.sender.send('onUpdate_ImageCheck_VN_SieuToc_90s', "hidden");
+            let res = await ev_Trochoi.Result_VN_SieuToc_90s();
+            if(res != null){
+                let turnNum = res.turnNum;
+                if(old_Turn_VN_SieuToc_90s != turnNum){
+                    old_Turn_VN_SieuToc_90s = turnNum;
+                    let n5  = parseInt(res.n5)
+                    let n6  = parseInt(res.n6)
+
+                    let sum =  n5 + n6;
+
+                    if(n6 % 2 == 0){
+                        chan_VN_SieuToc_90s += 1;
+                        le_VN_SieuToc_90s = 0;
+                    }else{
+                        chan_VN_SieuToc_90s = 0;
+                        le_VN_SieuToc_90s += 1;
+                    }
+                    
+                    if(n5 > 4 ){
+                        tai_VN_SieuToc_90s += 1;
+                        xiu_VN_SieuToc_90s = 0;
+                    }else{
+                        tai_VN_SieuToc_90s = 0;
+                        xiu_VN_SieuToc_90s += 1;
+                    }
+
+                    if(sum % 2 == 0){
+                        sum_chan_VN_SieuToc_90s += 1;
+                        sum_le_VN_SieuToc_90s = 0;
+                    }else{
+                        sum_chan_VN_SieuToc_90s = 0;
+                        sum_le_VN_SieuToc_90s += 1;
+                    }
+                    
+
+                    if(chan_VN_SieuToc_90s > 14){
+                        telegram_Handler.SendMessager_Chanel_TaXi("*** VN Siêu Tốc 90s:\n- Chẵn : "+chan_VN_SieuToc_90s+"\n Hãy đánh : LẺ")
+                    }
+                    if(le_VN_SieuToc_90s > 14){
+                        telegram_Handler.SendMessager_Chanel_TaXi("*** VN Siêu Tốc 90s:\n- LẺ : "+le_VN_SieuToc_90s+"\n Hãy đánh : CHẴN")
+                    }
+                    if(tai_VN_SieuToc_90s > 14){
+                        telegram_Handler.SendMessager_Chanel_TaXi("*** VN Siêu Tốc 90s:\n- Tài : "+tai_VN_SieuToc_90s+"\n Hãy đánh : XỈU")
+                    }
+                    if(xiu_VN_SieuToc_90s > 14){
+                        telegram_Handler.SendMessager_Chanel_TaXi("*** VN Siêu Tốc 90s:\n- XỈU : "+xiu_VN_SieuToc_90s+"\n Hãy đánh : TÀI")
+                    }
+                    if(sum_chan_VN_SieuToc_90s > 14){
+                        telegram_Handler.SendMessager_Chanel_TaXi("*** VN Siêu Tốc 90s:\n- Tổng Chẵn : "+sum_chan_VN_SieuToc_90s+"\n Hãy đánh : Tổng Lẻ")
+                    }
+                    if(sum_le_VN_SieuToc_90s > 14){
+                        telegram_Handler.SendMessager_Chanel_TaXi("*** VN Siêu Tốc 90s:\n- Tổng LẺ : "+sum_le_VN_SieuToc_90s+"\n Hãy đánh : Tổng Chẵn")
+                    }
+                    
+                    event.sender.send('onUpdate_runCheck_VN_SieuToc_90s', {turn:turnNum.split("-")[1],
+                        chan:chan_VN_SieuToc_90s,le:le_VN_SieuToc_90s,tai:tai_VN_SieuToc_90s,xiu:xiu_VN_SieuToc_90s,sum_chan:sum_chan_VN_SieuToc_90s,sum_le:sum_le_VN_SieuToc_90s});
+                }
+            }
+        })
+        
+    }
+})
+
+
+
+
+let old_Turn_SieuToc_45s = ""
+let chan_SieuToc_45s = 0;
+let le_SieuToc_45s = 0;
+let tai_SieuToc_45s = 0;
+let xiu_SieuToc_45s = 0;
+let sum_chan_SieuToc_45s = 0;
+let sum_le_SieuToc_45s = 0;
+ipcMain.handle('runCheck_SieuToc_45s',async(event) =>{
+    while (true) {
+        event.sender.send('onUpdate_ImageCheck_SieuToc_45s', "none");
+        await sleep(8000).then(async() => {
+            event.sender.send('onUpdate_ImageCheck_SieuToc_45s', "hidden");
+            let res = await ev_Trochoi.Result_SieuToc_45s();
+            if(res != null){
+                let turnNum = res.turnNum;
+                if(old_Turn_SieuToc_45s != turnNum){
+                    old_Turn_SieuToc_45s = turnNum;
+                    let n5  = parseInt(res.n5)
+                    let n6  = parseInt(res.n6)
+
+                    let sum =  n5 + n6;
+
+                    if(n6 % 2 == 0){
+                        chan_SieuToc_45s += 1;
+                        le_SieuToc_45s = 0;
+                    }else{
+                        chan_SieuToc_45s = 0;
+                        le_SieuToc_45s += 1;
+                    }
+                    
+                    if(n5 > 4 ){
+                        tai_SieuToc_45s += 1;
+                        xiu_SieuToc_45s = 0;
+                    }else{
+                        tai_SieuToc_45s = 0;
+                        xiu_SieuToc_45s += 1;
+                    }
+
+                    if(sum % 2 == 0){
+                        sum_chan_SieuToc_45s += 1;
+                        sum_le_SieuToc_45s = 0;
+                    }else{
+                        sum_chan_SieuToc_45s = 0;
+                        sum_le_SieuToc_45s += 1;
+                    }
+                    
+
+                    if(chan_SieuToc_45s > 14){
+                        telegram_Handler.SendMessager_Chanel_TaXi("*** Siêu Tốc 45s:\n- Chẵn : "+chan_SieuToc_45s+"\n Hãy đánh : LẺ")
+                    }
+                    if(le_SieuToc_45s > 14){
+                        telegram_Handler.SendMessager_Chanel_TaXi("*** Siêu Tốc 45s:\n- LẺ : "+le_SieuToc_45s+"\n Hãy đánh : CHẴN")
+                    }
+                    if(tai_SieuToc_45s > 14){
+                        telegram_Handler.SendMessager_Chanel_TaXi("*** Siêu Tốc 45s:\n- Tài : "+tai_SieuToc_45s+"\n Hãy đánh : XỈU")
+                    }
+                    if(xiu_SieuToc_45s > 14){
+                        telegram_Handler.SendMessager_Chanel_TaXi("*** Siêu Tốc 45s:\n- XỈU : "+xiu_SieuToc_45s+"\n Hãy đánh : TÀI")
+                    }
+                    if(sum_chan_SieuToc_45s > 14){
+                        telegram_Handler.SendMessager_Chanel_TaXi("*** Siêu Tốc 45s:\n- Tổng Chẵn : "+sum_chan_SieuToc_45s+"\n Hãy đánh : Tổng Lẻ")
+                    }
+                    if(sum_le_SieuToc_45s > 14){
+                        telegram_Handler.SendMessager_Chanel_TaXi("*** Siêu Tốc 45s:\n- Tổng LẺ : "+sum_le_SieuToc_45s+"\n Hãy đánh : Tổng Chẵn")
+                    }
+                    
+                    event.sender.send('onUpdate_runCheck_SieuToc_45s', {turn:turnNum.split("-")[1],
+                        chan:chan_SieuToc_45s,le:le_SieuToc_45s,tai:tai_SieuToc_45s,xiu:xiu_SieuToc_45s,sum_chan:sum_chan_SieuToc_45s,sum_le:sum_le_SieuToc_45s});
+                }
+            }
+        })
+        
+    }
+})
+
+
+
+let old_Turn_SieuToc_60s = ""
+let chan_SieuToc_60s = 0;
+let le_SieuToc_60s = 0;
+let tai_SieuToc_60s = 0;
+let xiu_SieuToc_60s = 0;
+let sum_chan_SieuToc_60s = 0;
+let sum_le_SieuToc_60s = 0;
+ipcMain.handle('runCheck_SieuToc_60s',async(event) =>{
+    while (true) {
+        event.sender.send('onUpdate_ImageCheck_SieuToc_60s', "none");
+        await sleep(8000).then(async() => {
+            event.sender.send('onUpdate_ImageCheck_SieuToc_60s', "hidden");
+            let res = await ev_Trochoi.Result_SieuToc_60s();
+            if(res != null){
+                let turnNum = res.turnNum;
+                if(old_Turn_SieuToc_60s != turnNum){
+                    old_Turn_SieuToc_60s = turnNum;
+                    let n5  = parseInt(res.n5)
+                    let n6  = parseInt(res.n6)
+
+                    let sum =  n5 + n6;
+
+                    if(n6 % 2 == 0){
+                        chan_SieuToc_60s += 1;
+                        le_SieuToc_60s = 0;
+                    }else{
+                        chan_SieuToc_60s = 0;
+                        le_SieuToc_60s += 1;
+                    }
+                    
+                    if(n5 > 4 ){
+                        tai_SieuToc_60s += 1;
+                        xiu_SieuToc_60s = 0;
+                    }else{
+                        tai_SieuToc_60s = 0;
+                        xiu_SieuToc_60s += 1;
+                    }
+
+                    if(sum % 2 == 0){
+                        sum_chan_SieuToc_60s += 1;
+                        sum_le_SieuToc_60s = 0;
+                    }else{
+                        sum_chan_SieuToc_60s = 0;
+                        sum_le_SieuToc_60s += 1;
+                    }
+                    
+
+                    if(chan_SieuToc_60s > 14){
+                        telegram_Handler.SendMessager_Chanel_TaXi("*** Siêu Tốc 60s:\n- Chẵn : "+chan_SieuToc_60s+"\n Hãy đánh : LẺ")
+                    }
+                    if(le_SieuToc_60s > 14){
+                        telegram_Handler.SendMessager_Chanel_TaXi("*** Siêu Tốc 60s:\n- LẺ : "+le_SieuToc_60s+"\n Hãy đánh : CHẴN")
+                    }
+                    if(tai_SieuToc_60s > 14){
+                        telegram_Handler.SendMessager_Chanel_TaXi("*** Siêu Tốc 60s:\n- Tài : "+tai_SieuToc_60s+"\n Hãy đánh : XỈU")
+                    }
+                    if(xiu_SieuToc_60s > 14){
+                        telegram_Handler.SendMessager_Chanel_TaXi("*** Siêu Tốc 60s:\n- XỈU : "+xiu_SieuToc_60s+"\n Hãy đánh : TÀI")
+                    }
+                    if(sum_chan_SieuToc_60s > 14){
+                        telegram_Handler.SendMessager_Chanel_TaXi("*** Siêu Tốc 60s:\n- Tổng Chẵn : "+sum_chan_SieuToc_60s+"\n Hãy đánh : Tổng Lẻ")
+                    }
+                    if(sum_le_SieuToc_60s > 14){
+                        telegram_Handler.SendMessager_Chanel_TaXi("*** Siêu Tốc 60s:\n- Tổng LẺ : "+sum_le_SieuToc_60s+"\n Hãy đánh : Tổng Chẵn")
+                    }
+                    
+                    event.sender.send('onUpdate_runCheck_SieuToc_60s', {turn:turnNum.split("-")[1],
+                        chan:chan_SieuToc_60s,le:le_SieuToc_60s,tai:tai_SieuToc_60s,xiu:xiu_SieuToc_60s,sum_chan:sum_chan_SieuToc_60s,sum_le:sum_le_SieuToc_60s});
+                }
+            }
+        })
+        
+    }
+})
+
+
+
+let old_Turn_SieuToc_90s = ""
+let chan_SieuToc_90s = 0;
+let le_SieuToc_90s = 0;
+let tai_SieuToc_90s = 0;
+let xiu_SieuToc_90s = 0;
+let sum_chan_SieuToc_90s = 0;
+let sum_le_SieuToc_90s = 0;
+ipcMain.handle('runCheck_SieuToc_90s',async(event) =>{
+    while (true) {
+        event.sender.send('onUpdate_ImageCheck_SieuToc_90s', "none");
+        await sleep(8000).then(async() => {
+            event.sender.send('onUpdate_ImageCheck_SieuToc_90s', "hidden");
+            let res = await ev_Trochoi.Result_SieuToc_90s();
+            if(res != null){
+                let turnNum = res.turnNum;
+                if(old_Turn_SieuToc_90s != turnNum){
+                    old_Turn_SieuToc_90s = turnNum;
+                    let n5  = parseInt(res.n5)
+                    let n6  = parseInt(res.n6)
+
+                    let sum =  n5 + n6;
+
+                    if(n6 % 2 == 0){
+                        chan_SieuToc_90s += 1;
+                        le_SieuToc_90s = 0;
+                    }else{
+                        chan_SieuToc_90s = 0;
+                        le_SieuToc_90s += 1;
+                    }
+                    
+                    if(n5 > 4 ){
+                        tai_SieuToc_90s += 1;
+                        xiu_SieuToc_90s = 0;
+                    }else{
+                        tai_SieuToc_90s = 0;
+                        xiu_SieuToc_90s += 1;
+                    }
+
+                    if(sum % 2 == 0){
+                        sum_chan_SieuToc_90s += 1;
+                        sum_le_SieuToc_90s = 0;
+                    }else{
+                        sum_chan_SieuToc_90s = 0;
+                        sum_le_SieuToc_90s += 1;
+                    }
+                    
+
+                    if(chan_SieuToc_90s > 14){
+                        telegram_Handler.SendMessager_Chanel_TaXi("*** Siêu Tốc 90s:\n- Chẵn : "+chan_SieuToc_90s+"\n Hãy đánh : LẺ")
+                    }
+                    if(le_SieuToc_90s > 14){
+                        telegram_Handler.SendMessager_Chanel_TaXi("*** Siêu Tốc 90s:\n- LẺ : "+le_SieuToc_90s+"\n Hãy đánh : CHẴN")
+                    }
+                    if(tai_SieuToc_90s > 14){
+                        telegram_Handler.SendMessager_Chanel_TaXi("*** Siêu Tốc 90s:\n- Tài : "+tai_SieuToc_90s+"\n Hãy đánh : XỈU")
+                    }
+                    if(xiu_SieuToc_90s > 14){
+                        telegram_Handler.SendMessager_Chanel_TaXi("*** Siêu Tốc 90s:\n- XỈU : "+xiu_SieuToc_90s+"\n Hãy đánh : TÀI")
+                    }
+                    if(sum_chan_SieuToc_90s > 14){
+                        telegram_Handler.SendMessager_Chanel_TaXi("*** Siêu Tốc 90s:\n- Tổng Chẵn : "+sum_chan_SieuToc_90s+"\n Hãy đánh : Tổng Lẻ")
+                    }
+                    if(sum_le_SieuToc_90s > 14){
+                        telegram_Handler.SendMessager_Chanel_TaXi("*** Siêu Tốc 90s:\n- Tổng LẺ : "+sum_le_SieuToc_90s+"\n Hãy đánh : Tổng Chẵn")
+                    }
+                    
+                    event.sender.send('onUpdate_runCheck_SieuToc_90s', {turn:turnNum.split("-")[1],
+                        chan:chan_SieuToc_90s,le:le_SieuToc_90s,tai:tai_SieuToc_90s,xiu:xiu_SieuToc_90s,sum_chan:sum_chan_SieuToc_90s,sum_le:sum_le_SieuToc_90s});
+                }
+            }
+        })
+        
+    }
+})
