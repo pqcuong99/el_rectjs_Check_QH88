@@ -27,36 +27,7 @@
             <label class="lb-result">Lẻ:</label>
             <label id="lb-tx-30s-le"></label>
         </div>
-        <!-- xoc dia 30s -->
-        <div id="container">
-            <input type="button" id="btn-check-XocDia_30s" value="Run Check Xóc Đĩa 30s" class="btn-check"><br><br>
-            <img src="https://i.gifer.com/ZKZg.gif" alt="loading" class="img-loading" id="img-load-xd-30s">
-        </div>
-
-        <div >
-            <label class="lb-result">Turn:</label>
-            <label id="lb-xd-30s-turn" ></label>
-            <label class="lb-result">Chẵn:</label>
-            <label id="lb-xd-30s-chan"></label>
-            <label class="lb-result">Lẻ:</label>
-            <label id="lb-xd-30s-le"></label>
-        </div>
-
-        <!-- xoc dia 45s -->
-        <div id="container">
-            <input type="button" id="btn-check-XocDia_45s" value="Run Check Xóc Đĩa 45s" class="btn-check"><br><br>
-            <img src="https://i.gifer.com/ZKZg.gif" alt="loading" class="img-loading" id="img-load-xd-45s">
-        </div>
-
-        <div>
-            <label class="lb-result">Turn:</label>
-            <label id="lb-xd-45s-turn" ></label>
-            <label class="lb-result">Chẵn:</label>
-            <label id="lb-xd-45s-chan"></label>
-            <label class="lb-result">Lẻ:</label>
-            <label id="lb-xd-45s-le"></label>
-        </div>
-
+        
         <!-- taxi 45s -->
         <div id="container">
             <input type="button" id="btn-check-Taxi_45s" value="Run Check Tài Xỉu 45s" class="btn-check"><br><br>
@@ -93,6 +64,37 @@
             <label id="lb-tx-60s-chan"></label>
             <label class="lb-result">Lẻ:</label>
             <label id="lb-tx-60s-le"></label>
+        </div>
+
+                
+        <!-- xoc dia 30s -->
+        <div id="container">
+            <input type="button" id="btn-check-XocDia_30s" value="Run Check Xóc Đĩa 30s" class="btn-check"><br><br>
+            <img src="https://i.gifer.com/ZKZg.gif" alt="loading" class="img-loading" id="img-load-xd-30s">
+        </div>
+
+        <div >
+            <label class="lb-result">Turn:</label>
+            <label id="lb-xd-30s-turn" ></label>
+            <label class="lb-result">Chẵn:</label>
+            <label id="lb-xd-30s-chan"></label>
+            <label class="lb-result">Lẻ:</label>
+            <label id="lb-xd-30s-le"></label>
+        </div>
+
+        <!-- xoc dia 45s -->
+        <div id="container">
+            <input type="button" id="btn-check-XocDia_45s" value="Run Check Xóc Đĩa 45s" class="btn-check"><br><br>
+            <img src="https://i.gifer.com/ZKZg.gif" alt="loading" class="img-loading" id="img-load-xd-45s">
+        </div>
+
+        <div>
+            <label class="lb-result">Turn:</label>
+            <label id="lb-xd-45s-turn" ></label>
+            <label class="lb-result">Chẵn:</label>
+            <label id="lb-xd-45s-chan"></label>
+            <label class="lb-result">Lẻ:</label>
+            <label id="lb-xd-45s-le"></label>
         </div>
 
         <!-- xoc dia 60s -->
@@ -262,7 +264,7 @@
 
         const btnCheckXocDia_45s= document.getElementById('btn-check-XocDia_45s');
         btnCheckXocDia_45s.addEventListener('click',function() {
-            btnCheckXocDia_45s.value = "Running  check tài xỉu 45s";
+            btnCheckXocDia_45s.value = "Running  check xóc đĩa 45s";
             window.eventCheck.runCheckXocDia_45s().then((data) =>{
             })
         })

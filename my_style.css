@@ -6,9 +6,10 @@
     text-decoration: none;
     display: inline-block;
     font-size: 15px;
-    width: 320px;
+    width: 350px;
     height: 22px;
     border-radius: 5px;
+    margin-bottom: 10px;
 }
 .btn-check {
     background-color: #04aa6d;
@@ -16,11 +17,12 @@
 
 
 #container {
-    margin-top: 5px;
+    margin-top: 7px;
     display: inline-flex;
     justify-content: space-between;
     align-items: center; /* Căn giữa theo chiều dọc */
 }
+
 
 .lb-result {
     font-size: 13px;
@@ -38,6 +40,7 @@
     color: rgb(8, 31, 243);
     font-size: 15px;
     margin-left: 5px;
+    font-weight: bold;
     margin-right: 5px;
 }
 
@@ -45,12 +48,14 @@
     color: rgb(39, 168, 46);
     font-size: 15px;
     margin-left: 5px;
+    font-weight: bold;
     margin-right: 5px;
 }
 [id^="lb-xd-"][id$="-chan"] {
     color: red;
     font-size: 15px;
     margin-left: 5px;
+    font-weight: bold;
     margin-right: 5px;
 }
 
@@ -59,6 +64,7 @@
     color: rgb(8, 31, 243);
     font-size: 15px;
     margin-left: 5px;
+    font-weight: bold;
     margin-right: 5px;
 }
 
@@ -66,6 +72,7 @@
     color: rgb(39, 168, 46);
     font-size: 15px;
     margin-left: 5px;
+    font-weight: bold;
     margin-right: 5px;
 }
 [id^="lb-tx-"][id$="-chan"] {
@@ -78,11 +85,122 @@
     color: rgb(240, 91, 240);
     font-size: 15px;
     margin-left: 5px;
+    font-weight: bold;
     margin-right: 5px;
 }
 [id^="lb-tx-"][id$="-xiu"] {
     color: rgb(57, 170, 204);
     font-size: 15px;
     margin-left: 5px;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+
+
+
+
+
+[id^="lb-st-"][id$="-turn"] {
+    color: rgb(8, 31, 243);
+    font-size: 15px;
+    margin-left: 5px;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+[id^="lb-st-"][id$="-le"] {
+    color: rgb(39, 168, 46);
+    font-size: 15px;
+    margin-left: 5px;
+    font-weight: bold;
+    margin-right: 5px;
+}
+[id^="lb-st-"][id$="-chan"] {
+    color: red;
+    font-size: 15px;
+    margin-right: 5px;
+}
+
+[id^="lb-st-"][id$="-tai"] {
+    color: rgb(240, 91, 240);
+    font-size: 15px;
+    margin-left: 5px;
+    font-weight: bold;
+    margin-right: 5px;
+}
+[id^="lb-st-"][id$="-xiu"] {
+    color: rgb(57, 170, 204);
+    font-size: 15px;
+    margin-left: 5px;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+[id^="lb-st-"][id$="-sumle"] {
+    color: rgb(80, 7, 80);
+    font-size: 15px;
+    margin-left: 5px;
+    font-weight: bold;
+    margin-right: 5px;
+}
+[id^="lb-st-"][id$="-sumchan"] {
+    color: rgb(197, 49, 12);
+    font-size: 15px;
+    margin-left: 5px;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+
+
+[id^="lb-vnst-"][id$="-turn"] {
+    color: rgb(8, 31, 243);
+    font-size: 15px;
+    margin-left: 5px;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+[id^="lb-vnst-"][id$="-le"] {
+    color: rgb(39, 168, 46);
+    font-size: 15px;
+    margin-left: 5px;
+    font-weight: bold;
+    margin-right: 5px;
+}
+[id^="lb-vnst-"][id$="-chan"] {
+    color: red;
+    font-size: 15px;
+    margin-right: 5px;
+}
+
+[id^="lb-vnst-"][id$="-tai"] {
+    color: rgb(240, 91, 240);
+    font-size: 15px;
+    margin-left: 5px;
+    font-weight: bold;
+    margin-right: 5px;
+}
+[id^="lb-vnst-"][id$="-xiu"] {
+    color: rgb(57, 170, 204);
+    font-size: 15px;
+    margin-left: 5px;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+[id^="lb-vnst-"][id$="-sumle"] {
+    color: rgb(80, 7, 80);
+    font-size: 15px;
+    margin-left: 5px;
+    font-weight: bold;
+    margin-right: 5px;
+}
+[id^="lb-vnst-"][id$="-sumchan"] {
+    color: rgb(197, 49, 12);
+    font-size: 15px;
+    margin-left: 5px;
+    font-weight: bold;
     margin-right: 5px;
 }
