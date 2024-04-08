@@ -88,16 +88,16 @@ ipcMain.handle('runCheckTaxi_30s',async(event) =>{
                         xiu_Taxi_30s += 1;
                     }
 
-                    if(chan_Taxi_30s > 14){
+                    if(chan_Taxi_30s > 10){
                         telegram_Handler.SendMessager_Chanel_TaXi("*** Trò chơi tài xỉu 30s:\n - Chẵn : "+chan_Taxi_30s+"\n Hãy đánh : LẺ")
                     }
-                    if(le_Taxi_30s > 14){
+                    if(le_Taxi_30s > 10){
                         telegram_Handler.SendMessager_Chanel_TaXi("*** Trò chơi tài xỉu 30s:\n - Lẻ : "+le_Taxi_30s+"\n Hãy đánh : CHẴN")
                     }
-                    if(tai_Taxi_30s > 14){
+                    if(tai_Taxi_30s > 10){
                         telegram_Handler.SendMessager_Chanel_TaXi("*** Trò chơi tài xỉu 30s:\n - Tài : "+tai_Taxi_30s+"\n Hãy đánh : Xỉu")
                     }
-                    if(xiu_Taxi_30s > 14){
+                    if(xiu_Taxi_30s > 10){
                         telegram_Handler.SendMessager_Chanel_TaXi("*** Trò chơi tài xỉu 30s:\n - Xỉu : "+xiu_Taxi_30s+"\n Hãy đánh : Tài")
                     }
                     event.sender.send('onUpdate_runCheckTaxi_30s', {turn:turnNum.split("-")[1],tai:tai_Taxi_30s,xiu:xiu_Taxi_30s,chan:chan_Taxi_30s,le:le_Taxi_30s});
@@ -233,16 +233,16 @@ ipcMain.handle('runCheckTaxi_45s',async(event) =>{
                         xiu_Taxi_45s += 1;
                     }
 
-                    if(chan_Taxi_45s > 14){
+                    if(chan_Taxi_45s > 10){
                         telegram_Handler.SendMessager_Chanel_TaXi("*** Trò chơi tài xỉu 45s:\n - Chẵn : "+chan_Taxi_45s+"\n Hãy đánh : LẺ")
                     }
-                    if(le_Taxi_45s > 14){
+                    if(le_Taxi_45s > 10){
                         telegram_Handler.SendMessager_Chanel_TaXi("*** Trò chơi tài xỉu 45s:\n - Lẻ : "+le_Taxi_45s+"\n Hãy đánh : CHẴN")
                     }
-                    if(tai_Taxi_45s > 14){
+                    if(tai_Taxi_45s > 10){
                         telegram_Handler.SendMessager_Chanel_TaXi("*** Trò chơi tài xỉu 45s:\n - Tài : "+tai_Taxi_45s+"\n Hãy đánh : Xỉu")
                     }
-                    if(xiu_Taxi_45s > 14){
+                    if(xiu_Taxi_45s > 10){
                         telegram_Handler.SendMessager_Chanel_TaXi("*** Trò chơi tài xỉu 45s:\n - Xỉu : "+xiu_Taxi_45s+"\n Hãy đánh : Tài")
                     }
 
@@ -337,16 +337,16 @@ ipcMain.handle('runCheckTaxi_60s',async(event) =>{
                         xiu_Taxi_60s += 1;
                     }
 
-                    if(chan_Taxi_60s > 14){
+                    if(chan_Taxi_60s > 10){
                         telegram_Handler.SendMessager_Chanel_TaXi("*** Trò chơi tài xỉu 60s:\n - Chẵn : "+chan_Taxi_60s+"\n Hãy đánh : LẺ")
                     }
-                    if(le_Taxi_60s > 14){
+                    if(le_Taxi_60s > 10){
                         telegram_Handler.SendMessager_Chanel_TaXi("*** Trò chơi tài xỉu 60s:\n - Lẻ : "+le_Taxi_60s+"\n Hãy đánh : CHẴN")
                     }
-                    if(tai_Taxi_60s > 14){
+                    if(tai_Taxi_60s > 10){
                         telegram_Handler.SendMessager_Chanel_TaXi("*** Trò chơi tài xỉu 60s:\n - Tài : "+tai_Taxi_60s+"\n Hãy đánh : Xỉu")
                     }
-                    if(xiu_Taxi_60s > 14){
+                    if(xiu_Taxi_60s > 10){
                         telegram_Handler.SendMessager_Chanel_TaXi("*** Trò chơi tài xỉu 60s:\n - Xỉu : "+xiu_Taxi_60s+"\n Hãy đánh : Tài")
                     }
                     event.sender.send('onUpdate_runCheckTaxi_60s', {turn:turnNum.split("-")[1],tai:tai_Taxi_60s,xiu:xiu_Taxi_60s,chan:chan_Taxi_60s,le:le_Taxi_60s});
@@ -409,27 +409,27 @@ ipcMain.handle('runCheck_VN_SieuToc_45s',async(event) =>{
                     }
                     
 
-                    if(chan_VN_SieuToc_45s > 14){
+                    if(chan_VN_SieuToc_45s > 10){
                         telegram_Handler.SendMessager_Chanel_TaXi("*** VN Siêu Tốc 45s:\n- Chẵn : "+chan_VN_SieuToc_45s+"\n Hãy đánh : LẺ")
                         //ev_SieuToc.Cuoc_VN_SieuToc_45s(turnNum,"LE",arrayCuocSieuToc[chan_VN_SieuToc_45s-15],"GDL2S");
                     }
-                    if(le_VN_SieuToc_45s > 14){
+                    if(le_VN_SieuToc_45s > 10){
                         telegram_Handler.SendMessager_Chanel_TaXi("*** VN Siêu Tốc 45s:\n- LẺ : "+le_VN_SieuToc_45s+"\n Hãy đánh : CHẴN")
                         //ev_SieuToc.Cuoc_VN_SieuToc_45s(turnNum,"CHAN",arrayCuocSieuToc[le_VN_SieuToc_45s-15],"GDL2S");
                     }
-                    if(tai_VN_SieuToc_45s > 14){
+                    if(tai_VN_SieuToc_45s > 10){
                         telegram_Handler.SendMessager_Chanel_TaXi("*** VN Siêu Tốc 45s:\n- Tài : "+tai_VN_SieuToc_45s+"\n Hãy đánh : XỈU")
                         //ev_SieuToc.Cuoc_VN_SieuToc_45s(turnNum,"NHO",arrayCuocSieuToc[tai_VN_SieuToc_45s-15],"GDL2S");
                     }
-                    if(xiu_VN_SieuToc_45s > 14){
+                    if(xiu_VN_SieuToc_45s > 10){
                         telegram_Handler.SendMessager_Chanel_TaXi("*** VN Siêu Tốc 45s:\n- XỈU : "+xiu_VN_SieuToc_45s+"\n Hãy đánh : TÀI")
                         //ev_SieuToc.Cuoc_VN_SieuToc_45s(turnNum,"LON",arrayCuocSieuToc[xiu_VN_SieuToc_45s-15],"GDL2S");
                     }
-                    if(sum_chan_VN_SieuToc_45s > 14){
+                    if(sum_chan_VN_SieuToc_45s > 10){
                         telegram_Handler.SendMessager_Chanel_TaXi("*** VN Siêu Tốc 45s:\n- Tổng Chẵn : "+sum_chan_VN_SieuToc_45s+"\n Hãy đánh : Tổng Lẻ")
                         //ev_SieuToc.Cuoc_VN_SieuToc_45s(turnNum,"LE",arrayCuocSieuToc[sum_chan_VN_SieuToc_45s-15],"GDL2STGT");
                     }
-                    if(sum_le_VN_SieuToc_45s > 14){
+                    if(sum_le_VN_SieuToc_45s > 10){
                         telegram_Handler.SendMessager_Chanel_TaXi("*** VN Siêu Tốc 45s:\n- Tổng LẺ : "+sum_le_VN_SieuToc_45s+"\n Hãy đánh : Tổng Chẵn")
                         //ev_SieuToc.Cuoc_VN_SieuToc_45s(turnNum,"CHAN",arrayCuocSieuToc[sum_le_VN_SieuToc_45s-15],"GDL2STGT");
                     }
@@ -492,27 +492,27 @@ ipcMain.handle('runCheck_VN_SieuToc_60s',async(event) =>{
                     }
                     
 
-                    if(chan_VN_SieuToc_60s > 14){
+                    if(chan_VN_SieuToc_60s > 10){
                         telegram_Handler.SendMessager_Chanel_TaXi("*** VN Siêu Tốc 60s:\n- Chẵn : "+chan_VN_SieuToc_60s+"\n Hãy đánh : LẺ")
                         //ev_SieuToc.Cuoc_VN_SieuToc_60s(turnNum,"LE",arrayCuocSieuToc[chan_VN_SieuToc_60s-15],"GDL2S");
                     }
-                    if(le_VN_SieuToc_60s > 14){
+                    if(le_VN_SieuToc_60s > 10){
                         telegram_Handler.SendMessager_Chanel_TaXi("*** VN Siêu Tốc 60s:\n- LẺ : "+le_VN_SieuToc_60s+"\n Hãy đánh : CHẴN")
                         //ev_SieuToc.Cuoc_VN_SieuToc_60s(turnNum,"CHAN",arrayCuocSieuToc[le_VN_SieuToc_60s-15],"GDL2S");
                     }
-                    if(tai_VN_SieuToc_60s > 14){
+                    if(tai_VN_SieuToc_60s > 10){
                         telegram_Handler.SendMessager_Chanel_TaXi("*** VN Siêu Tốc 60s:\n- Tài : "+tai_VN_SieuToc_60s+"\n Hãy đánh : XỈU")
                         //ev_SieuToc.Cuoc_VN_SieuToc_60s(turnNum,"NHO",arrayCuocSieuToc[tai_VN_SieuToc_60s-15],"GDL2S");
                     }
-                    if(xiu_VN_SieuToc_60s > 14){
+                    if(xiu_VN_SieuToc_60s > 10){
                         telegram_Handler.SendMessager_Chanel_TaXi("*** VN Siêu Tốc 60s:\n- XỈU : "+xiu_VN_SieuToc_60s+"\n Hãy đánh : TÀI")
                         //ev_SieuToc.Cuoc_VN_SieuToc_60s(turnNum,"LON",arrayCuocSieuToc[xiu_VN_SieuToc_60s-15],"GDL2S");
                     }
-                    if(sum_chan_VN_SieuToc_60s > 14){
+                    if(sum_chan_VN_SieuToc_60s > 10){
                         telegram_Handler.SendMessager_Chanel_TaXi("*** VN Siêu Tốc 60s:\n- Tổng Chẵn : "+sum_chan_VN_SieuToc_60s+"\n Hãy đánh : Tổng Lẻ")
                         //ev_SieuToc.Cuoc_VN_SieuToc_60s(turnNum,"LE",arrayCuocSieuToc[sum_chan_VN_SieuToc_60s-15],"GDL2STGT");
                     }
-                    if(sum_le_VN_SieuToc_60s > 14){
+                    if(sum_le_VN_SieuToc_60s > 10){
                         telegram_Handler.SendMessager_Chanel_TaXi("*** VN Siêu Tốc 60s:\n- Tổng LẺ : "+sum_le_VN_SieuToc_60s+"\n Hãy đánh : Tổng Chẵn")
                         //ev_SieuToc.Cuoc_VN_SieuToc_60s(turnNum,"CHAN",arrayCuocSieuToc[sum_le_VN_SieuToc_60s-15],"GDL2STGT");
                     }
@@ -575,27 +575,27 @@ ipcMain.handle('runCheck_VN_SieuToc_90s',async(event) =>{
                     }
                     
 
-                    if(chan_VN_SieuToc_90s > 14){
+                    if(chan_VN_SieuToc_90s > 10){
                         telegram_Handler.SendMessager_Chanel_TaXi("*** VN Siêu Tốc 90s:\n- Chẵn : "+chan_VN_SieuToc_90s+"\n Hãy đánh : LẺ")
                         //ev_SieuToc.Cuoc_VN_SieuToc_90s(turnNum,"LE",arrayCuocSieuToc[chan_VN_SieuToc_90s-15],"GDL2S");
                     }
-                    if(le_VN_SieuToc_90s > 14){
+                    if(le_VN_SieuToc_90s > 10){
                         telegram_Handler.SendMessager_Chanel_TaXi("*** VN Siêu Tốc 90s:\n- LẺ : "+le_VN_SieuToc_90s+"\n Hãy đánh : CHẴN")
                         //ev_SieuToc.Cuoc_VN_SieuToc_90s(turnNum,"CHAN",arrayCuocSieuToc[le_VN_SieuToc_90s-15],"GDL2S");
                     }
-                    if(tai_VN_SieuToc_90s > 14){
+                    if(tai_VN_SieuToc_90s > 10){
                         telegram_Handler.SendMessager_Chanel_TaXi("*** VN Siêu Tốc 90s:\n- Tài : "+tai_VN_SieuToc_90s+"\n Hãy đánh : XỈU")
                         //ev_SieuToc.Cuoc_VN_SieuToc_90s(turnNum,"NHO",arrayCuocSieuToc[tai_VN_SieuToc_90s-15],"GDL2S");
                     }
-                    if(xiu_VN_SieuToc_90s > 14){
+                    if(xiu_VN_SieuToc_90s > 10){
                         telegram_Handler.SendMessager_Chanel_TaXi("*** VN Siêu Tốc 90s:\n- XỈU : "+xiu_VN_SieuToc_90s+"\n Hãy đánh : TÀI")
                         //ev_SieuToc.Cuoc_VN_SieuToc_90s(turnNum,"LON",arrayCuocSieuToc[xiu_VN_SieuToc_90s-15],"GDL2S");
                     }
-                    if(sum_chan_VN_SieuToc_90s > 14){
+                    if(sum_chan_VN_SieuToc_90s > 10){
                         telegram_Handler.SendMessager_Chanel_TaXi("*** VN Siêu Tốc 90s:\n- Tổng Chẵn : "+sum_chan_VN_SieuToc_90s+"\n Hãy đánh : Tổng Lẻ")
                         //ev_SieuToc.Cuoc_VN_SieuToc_90s(turnNum,"LE",arrayCuocSieuToc[sum_chan_VN_SieuToc_90s-15],"GDL2S");
                     }
-                    if(sum_le_VN_SieuToc_90s > 14){
+                    if(sum_le_VN_SieuToc_90s > 10){
                         telegram_Handler.SendMessager_Chanel_TaXi("*** VN Siêu Tốc 90s:\n- Tổng LẺ : "+sum_le_VN_SieuToc_90s+"\n Hãy đánh : Tổng Chẵn")
                         //ev_SieuToc.Cuoc_VN_SieuToc_90s(turnNum,"CHAN",arrayCuocSieuToc[sum_le_VN_SieuToc_90s-15],"GDL2S");
                     }
@@ -659,27 +659,27 @@ ipcMain.handle('runCheck_SieuToc_45s',async(event) =>{
                     }
                     
 
-                    if(chan_SieuToc_45s > 14){
+                    if(chan_SieuToc_45s > 10){
                         telegram_Handler.SendMessager_Chanel_TaXi("*** Siêu Tốc 45s:\n- Chẵn : "+chan_SieuToc_45s+"\n Hãy đánh : LẺ")
                         //ev_SieuToc.Cuoc_SieuToc_45s(turnNum,"LE",arrayCuocSieuToc[chan_SieuToc_45s-15],"GDL2S");
                     }
-                    if(le_SieuToc_45s > 14){
+                    if(le_SieuToc_45s > 10){
                         telegram_Handler.SendMessager_Chanel_TaXi("*** Siêu Tốc 45s:\n- LẺ : "+le_SieuToc_45s+"\n Hãy đánh : CHẴN")
                         //ev_SieuToc.Cuoc_SieuToc_45s(turnNum,"CHAN",arrayCuocSieuToc[le_SieuToc_45s-15],"GDL2S");
                     }
-                    if(tai_SieuToc_45s > 14){
+                    if(tai_SieuToc_45s > 10){
                         telegram_Handler.SendMessager_Chanel_TaXi("*** Siêu Tốc 45s:\n- Tài : "+tai_SieuToc_45s+"\n Hãy đánh : XỈU")
                         //ev_SieuToc.Cuoc_SieuToc_45s(turnNum,"NHO",arrayCuocSieuToc[tai_SieuToc_45s-15],"GDL2S");
                     }
-                    if(xiu_SieuToc_45s > 14){
+                    if(xiu_SieuToc_45s > 10){
                         telegram_Handler.SendMessager_Chanel_TaXi("*** Siêu Tốc 45s:\n- XỈU : "+xiu_SieuToc_45s+"\n Hãy đánh : TÀI")
                         //ev_SieuToc.Cuoc_SieuToc_45s(turnNum,"LON",arrayCuocSieuToc[xiu_SieuToc_45s-15],"GDL2S");
                     }
-                    if(sum_chan_SieuToc_45s > 14){
+                    if(sum_chan_SieuToc_45s > 10){
                         telegram_Handler.SendMessager_Chanel_TaXi("*** Siêu Tốc 45s:\n- Tổng Chẵn : "+sum_chan_SieuToc_45s+"\n Hãy đánh : Tổng Lẻ")
                         //ev_SieuToc.Cuoc_SieuToc_45s(turnNum,"LE",arrayCuocSieuToc[sum_chan_SieuToc_45s-15],"GDL2STGT");
                     }
-                    if(sum_le_SieuToc_45s > 14){
+                    if(sum_le_SieuToc_45s > 10){
                         telegram_Handler.SendMessager_Chanel_TaXi("*** Siêu Tốc 45s:\n- Tổng LẺ : "+sum_le_SieuToc_45s+"\n Hãy đánh : Tổng Chẵn")
                         //ev_SieuToc.Cuoc_SieuToc_45s(turnNum,"CHAN",arrayCuocSieuToc[sum_le_SieuToc_45s-15],"GDL2STGT");
                     }
@@ -742,27 +742,27 @@ ipcMain.handle('runCheck_SieuToc_60s',async(event) =>{
                     }
                     
 
-                    if(chan_SieuToc_60s > 14){
+                    if(chan_SieuToc_60s > 10){
                         telegram_Handler.SendMessager_Chanel_TaXi("*** Siêu Tốc 60s:\n- Chẵn : "+chan_SieuToc_60s+"\n Hãy đánh : LẺ")
                         //ev_SieuToc.Cuoc_SieuToc_60s(turnNum,"LE",arrayCuocSieuToc[chan_SieuToc_60s-15],"GDL2S");
                     }
-                    if(le_SieuToc_60s > 14){
+                    if(le_SieuToc_60s > 10){
                         telegram_Handler.SendMessager_Chanel_TaXi("*** Siêu Tốc 60s:\n- LẺ : "+le_SieuToc_60s+"\n Hãy đánh : CHẴN")
                         //ev_SieuToc.Cuoc_SieuToc_60s(turnNum,"CHAN",arrayCuocSieuToc[le_SieuToc_60s-15],"GDL2S");
                     }
-                    if(tai_SieuToc_60s > 14){
+                    if(tai_SieuToc_60s > 10){
                         telegram_Handler.SendMessager_Chanel_TaXi("*** Siêu Tốc 60s:\n- Tài : "+tai_SieuToc_60s+"\n Hãy đánh : XỈU")
                         //ev_SieuToc.Cuoc_SieuToc_60s(turnNum,"NHO",arrayCuocSieuToc[tai_SieuToc_60s-15],"GDL2S");
                     }
-                    if(xiu_SieuToc_60s > 14){
+                    if(xiu_SieuToc_60s > 10){
                         telegram_Handler.SendMessager_Chanel_TaXi("*** Siêu Tốc 60s:\n- XỈU : "+xiu_SieuToc_60s+"\n Hãy đánh : TÀI")
                         //ev_SieuToc.Cuoc_SieuToc_60s(turnNum,"LON",arrayCuocSieuToc[xiu_SieuToc_60s-15],"GDL2S");
                     }
-                    if(sum_chan_SieuToc_60s > 14){
+                    if(sum_chan_SieuToc_60s > 10){
                         telegram_Handler.SendMessager_Chanel_TaXi("*** Siêu Tốc 60s:\n- Tổng Chẵn : "+sum_chan_SieuToc_60s+"\n Hãy đánh : Tổng Lẻ")
                         //ev_SieuToc.Cuoc_SieuToc_60s(turnNum,"LE",arrayCuocSieuToc[sum_chan_SieuToc_60s-15],"GDL2STGT");
                     }
-                    if(sum_le_SieuToc_60s > 14){
+                    if(sum_le_SieuToc_60s > 10){
                         telegram_Handler.SendMessager_Chanel_TaXi("*** Siêu Tốc 60s:\n- Tổng LẺ : "+sum_le_SieuToc_60s+"\n Hãy đánh : Tổng Chẵn")
                         //ev_SieuToc.Cuoc_SieuToc_60s(turnNum,"CHAN",arrayCuocSieuToc[sum_le_SieuToc_60s-15],"GDL2STGT");
                     }
@@ -825,27 +825,27 @@ ipcMain.handle('runCheck_SieuToc_90s',async(event) =>{
                     }
                     
 
-                    if(chan_SieuToc_90s > 14){
+                    if(chan_SieuToc_90s > 10){
                         telegram_Handler.SendMessager_Chanel_TaXi("*** Siêu Tốc 90s:\n- Chẵn : "+chan_SieuToc_90s+"\n Hãy đánh : LẺ")
                         //ev_SieuToc.Cuoc_SieuToc_90s(turnNum,"LE",arrayCuocSieuToc[chan_SieuToc_90s-15],"GDL2S");
                     }
-                    if(le_SieuToc_90s > 14){
+                    if(le_SieuToc_90s > 10){
                         telegram_Handler.SendMessager_Chanel_TaXi("*** Siêu Tốc 90s:\n- LẺ : "+le_SieuToc_90s+"\n Hãy đánh : CHẴN")
                         //ev_SieuToc.Cuoc_SieuToc_90s(turnNum,"CHAN",arrayCuocSieuToc[le_SieuToc_90s-15],"GDL2S");
                     }
-                    if(tai_SieuToc_90s > 14){
+                    if(tai_SieuToc_90s > 10){
                         telegram_Handler.SendMessager_Chanel_TaXi("*** Siêu Tốc 90s:\n- Tài : "+tai_SieuToc_90s+"\n Hãy đánh : XỈU")
                         //ev_SieuToc.Cuoc_SieuToc_90s(turnNum,"NHO",arrayCuocSieuToc[tai_SieuToc_90s-15],"GDL2S");
                     }
-                    if(xiu_SieuToc_90s > 14){
+                    if(xiu_SieuToc_90s > 10){
                         telegram_Handler.SendMessager_Chanel_TaXi("*** Siêu Tốc 90s:\n- XỈU : "+xiu_SieuToc_90s+"\n Hãy đánh : TÀI")
                         //ev_SieuToc.Cuoc_SieuToc_90s(turnNum,"LON",arrayCuocSieuToc[xiu_SieuToc_90s-15],"GDL2S");
                     }
-                    if(sum_chan_SieuToc_90s > 14){
+                    if(sum_chan_SieuToc_90s > 10){
                         telegram_Handler.SendMessager_Chanel_TaXi("*** Siêu Tốc 90s:\n- Tổng Chẵn : "+sum_chan_SieuToc_90s+"\n Hãy đánh : Tổng Lẻ")
                         //ev_SieuToc.Cuoc_SieuToc_90s(turnNum,"LE",arrayCuocSieuToc[sum_chan_SieuToc_90s-15],"GDL2STGT");
                     }
-                    if(sum_le_SieuToc_90s > 14){
+                    if(sum_le_SieuToc_90s > 10){
                         telegram_Handler.SendMessager_Chanel_TaXi("*** Siêu Tốc 90s:\n- Tổng LẺ : "+sum_le_SieuToc_90s+"\n Hãy đánh : Tổng Chẵn")
                         //ev_SieuToc.Cuoc_SieuToc_90s(turnNum,"CHAN",arrayCuocSieuToc[sum_le_SieuToc_90s-15],"GDL2STGT");
                     }
